@@ -17,7 +17,7 @@ def guessNum():
             if attempts < 5:
                 print('You\'re pretty good at this!')
             else:
-                print('Wow. ' + str(attempts) + ' tries. You suck at this game.')
+                print('Wow. ' + str(attempts) + ' tries. Not your best.')
             playAgain()
         elif guess > rand:
             attempts += 1
