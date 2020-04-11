@@ -1,7 +1,6 @@
 import random
 
-# Test Test Test Test Test...
-# New test for git pull command...
+# Test for using Git on raspberry pi
 
 def randomNum():
     randNum = random.randint(1,100)
