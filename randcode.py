@@ -1,13 +1,10 @@
-print('Input a word you would like encoded')
-orgWord = input()
-
-def encodeWord():
-    wordLen = len(orgWord)
+def encodeWord(usrWord):
+    wordLen = len(usrWord)
     encription = ""
     n = 1
 
     while n <= wordLen:
-        for i in orgWord.lower():
+        for i in usrWord.lower():
             if i == 'a':
                 encription += '?'
             elif i == 'b':
@@ -18,8 +15,6 @@ def encodeWord():
                 encription += '$'
             elif i == 'e':
                 encription += '!'
-            elif i == 'f':
-                encription += '^'
             elif i == 'f':
                 encription += '*'
             elif i == 'g':
@@ -62,8 +57,93 @@ def encodeWord():
                 encription += '8'
             elif i == 'z':
                 encription += '%'
+            elif i ==' ':
+                encription += '^'
             n += 1
+
         return encription
 
-codedWord = encodeWord()
-print('Your encription for the word, ' + orgWord + ' is \" ' + codedWord + ' \"')
+def decodeWord(usrCode):
+    wordLen = len(usrCode)
+    decription = ""
+    n = 1
+
+    while n <= wordLen:
+        for i in usrCode:
+            if i == '?':
+                decription += 'a'
+            elif i == '#':
+                decription += 'b'
+            elif i == ')':
+                decription += 'c'
+            elif i == '$':
+                decription += 'd'
+            elif i == '!':
+                decription += 'e'
+            elif i == '*':
+                decription += 'f'
+            elif i == '6':
+                decription += 'g'
+            elif i == '=':
+                decription += 'h'
+            elif i == '+':
+                decription += 'i'
+            elif i == '-':
+                decription += 'j'
+            elif i == '@':
+                decription += 'k'
+            elif i == '~':
+                decription += 'l'
+            elif i == '`':
+                decription += 'm'
+            elif i == '<':
+                decription += 'n'
+            elif i == '4':
+                decription += 'o'
+            elif i == '3':
+                decription += 'p'
+            elif i == '|':
+                decription += 'q'
+            elif i == '{':
+                decription += 'r'
+            elif i == '.':
+                decription += 's'
+            elif i == ',':
+                decription += 't'
+            elif i == ';':
+                decription += 'u'
+            elif i == '2':
+                decription += 'v'
+            elif i == '5':
+                decription += 'w'
+            elif i == '9':
+                decription += 'x'
+            elif i == '8':
+                decription += 'y'
+            elif i == '%':
+                decription += 'z'
+            elif i == '^':
+                decription += ' '
+            n += 1
+        return decription
+
+def encodeOrDecode():
+    print('Enter \'Encode\' to produce a code for a word or \'Decode\' to decode a word.')
+    userAns = input()
+    userAns.lower()
+
+    if userAns == 'encode':
+        print('Input a word you would like encoded.')
+        orgWord = input()
+        codedWord = encodeWord(orgWord)
+        print('Your encription for the word, ' + orgWord + ' is \" ' + codedWord + ' \"')
+    elif userAns == 'decode':
+        print('Input a code you would like decoded.')
+        orgCode = input()
+        decodedWord = decodeWord(orgCode)
+        print('The word from the code ' + orgCode + ' is \"' + decodedWord + ' \"')
+    else:
+        print('Didn\'t recognize your input.')
+        encodeOrDecode()
+
+encodeOrDecode()
