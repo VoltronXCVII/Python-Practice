@@ -137,13 +137,26 @@ def encodeOrDecode():
         orgWord = input()
         codedWord = encodeWord(orgWord)
         print('Your encription for the word, ' + orgWord + ' is \" ' + codedWord + ' \"')
+        goAgain()
     elif userAns == 'decode':
         print('Input a code you would like decoded.')
         orgCode = input()
         decodedWord = decodeWord(orgCode)
-        print('The word from the code ' + orgCode + ' is \"' + decodedWord + ' \"')
+        print('The word from the code ' + orgCode + ' is \" ' + decodedWord + ' \"')
+        goAgain()
     else:
         print('Didn\'t recognize your input.')
         encodeOrDecode()
+
+def goAgain():
+    print('Would you like to use the encoder again? (Y/N)')
+    usrRetry = input()
+    usrRetry.lower()
+
+    if usrRetry == 'y':
+        encodeOrDecode()
+    elif usrRetry == 'n':
+        print('Goodbye.')
+
 
 encodeOrDecode()
