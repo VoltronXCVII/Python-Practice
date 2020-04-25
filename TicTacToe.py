@@ -1,6 +1,14 @@
 import random
 
-theBoard = {'upper-L': ' ','upper-M': ' ','upper-R': ' ', 'middle-L': ' ','middle-M': ' ','middle-R': ' ', 'lower-L': ' ','lower-M': ' ','lower-R': ' '}
+theBoard = {'upper-L': ' ',
+            'upper-M': ' ',
+            'upper-R': ' ',
+            'middle-L': ' ',
+            'middle-M': ' ',
+            'middle-R': ' ',
+            'lower-L': ' ',
+            'lower-M': ' ',
+            'lower-R': ' '}
 
 computerSpot = {1: 'upper-L',
                 2: 'upper-M',
@@ -33,13 +41,12 @@ def playersTurn():
 
 def computersTurn():
     randNum = random.randint(1,9)
-    print(randNum)
-    print(theBoard[computerSpot[randNum]])
-    #if theBoard[computerSpot[randNum]] == ' ':
-        #theBoard[randNum] = 'O'
-    #elif theBoard[randNum] != ' ':
-        #computersTurn()
-    #showBoard(theBoard)
+
+    if theBoard[computerSpot[randNum]] == ' ':
+        theBoard[computerSpot[randNum]] = 'O'
+    elif theBoard[compterSpot[randNum]] != ' ':
+        computersTurn()
+    showBoard(theBoard)
 
 
     
