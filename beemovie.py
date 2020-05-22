@@ -3,7 +3,7 @@ accountSID = 'AC2cc64e9350e508efd35753949f678633'
 authToken = '376d9f8ab5762bf80d0e0265c4fae6ce'
 twilioCli = Client(accountSID, authToken)
 myTwilioNumber = '+16187047318'
-myCellNumber = '+17753432021'
+myCellNumber = '+17757724224'
 
 movieScript = """According to all known laws
 of aviation,
